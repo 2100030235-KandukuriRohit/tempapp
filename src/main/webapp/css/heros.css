@@ -1,0 +1,98 @@
+/* Hero Section */
+.hero {
+    width: 100%;
+    height: 100%;
+    background: url('/main.jpg') no-repeat center center/cover fixed;
+    background-position: center 10%; /* Adjust the position */
+}
+
+.hero .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.hero .content {
+    display: flex;
+    height: 110vh;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0rem;
+    margin-left: 4rem;
+}
+
+.hero h3 {
+    color: #f8f8f8;
+}
+
+.hero h1 {
+    color: #f8f8f8;
+}
+
+.hero .blue {
+    color: var(--primary-color);
+}
+
+@media screen and (max-width: 940px) {
+    .hero .content {
+        margin-left: 1rem;
+    }
+}
+/* Clock Section */
+.containerclock {
+    position: absolute;
+    top: 153px;
+    right: 30px;
+}
+
+.clock {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Add this to make positioning relative for child elements */
+}
+
+.clock span {
+    position: absolute;
+    transform: rotate(calc(30deg * var(--i)));
+    inset: 12px;
+    text-align: center;
+}
+
+.clock span b {
+    transform: rotate(calc(-30deg * var(--i)));
+    display: inline-block;
+    font-size: 15px; /* Adjust the font size of the clock numbers */
+}
+
+.clock::before {
+    content: '';
+    position: absolute;
+    width: 7px; /* Adjust the width of the center dot */
+    height: 7px; /* Adjust the height of the center dot */
+    border-radius: 50%;
+    background-color: #fff;
+    z-index: 2;
+}
+
+.hand {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 0;
+}
+
+.hand i {
+    position: absolute;
+    background-color: var(--clr);
+    height: var(--h);
+    width:var(--w);
+    border-radius: 8px;
+    bottom: calc(50% - 4px); /* Adjust the position to be at the end of the clock */
+}
